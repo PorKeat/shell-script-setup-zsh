@@ -1,46 +1,60 @@
-# Zsh Setup Script
+# Universal Zsh Setup Script
 
-This script automates the installation and configuration of **Zsh**, **Oh My Zsh**, popular **Zsh plugins**, and the **Agnoster theme** on Linux systems.
-
-It also sets Zsh as your default shell.
-
----
+This script automates the installation and configuration of Zsh, Oh My Zsh, popular plugins, and the Agnoster theme across various Linux distributions.
 
 ## Features
 
-- Installs required dependencies: `zsh`, `git`, `curl`, `fzf`, `nodejs`, `npm`.
-- Installs **Oh My Zsh** framework.
-- Installs useful Zsh plugins:
-  - `zsh-autosuggestions`
-  - `zsh-syntax-highlighting`
-  - `zsh-history-substring-search`
-  - `zsh-autopair`
-  - `alias-finder`
-  - `zsh-nvm`
-  - `fzf-tab`
-  - `zsh-completions`
-- Sets the **Agnoster theme**.
-- Sets Zsh as the default shell.
-- Backs up existing `.zshrc` file automatically.
-
----
-
-## Requirements
-
-- Linux (tested on Ubuntu/Debian)
-- `sudo` privileges
-- `curl` and `git` (script installs them if missing)
-
----
+-   **Distribution Detection**: Automatically identifies your Linux distribution (Ubuntu, Debian, Fedora, Arch, openSUSE, Gentoo, Void, Alpine, etc.) and uses the correct package manager.
+-   **Dependency Installation**: Installs essential packages like `zsh`, `git`, `curl`, `fzf`, `nodejs`, and `npm`.
+-   **Oh My Zsh Installation**: Installs Oh My Zsh if it's not already present.
+-   **Plugin Management**:
+    -   Installs and keeps updated a comprehensive set of Zsh plugins:
+        -   `zsh-autosuggestions`
+        -   `zsh-syntax-highlighting`
+        -   `zsh-history-substring-search`
+        -   `zsh-autopair`
+        -   `alias-finder`
+        -   `zsh-nvm`
+        -   `fzf-tab`
+        -   `zsh-completions`
+    -   Ensures your `.zshrc` is configured to load these plugins.
+-   **Agnoster Theme**: Sets the popular Agnoster theme for a visually appealing terminal experience.
+-   **Default Shell Configuration**: Prompts to set Zsh as your default shell, handling `sudo` permissions gracefully.
+-   **Safe Backup**: Creates a timestamped backup of your existing `.zshrc` file before making any changes.
 
 ## Usage
 
-Make the script executable:
+1.  **Download the script:**
+    ```bash
+    git clone https://github.com/your-username/shell-script-setup-zsh.git
+    cd shell-script-setup-zsh
+    ```
+    (Replace `https://github.com/your-username/shell-script-setup-zsh.git` with the actual repository URL)
 
-```bash
-chmod +x zsh-setup.sh
-```
+2.  **Make the script executable:**
+    ```bash
+    chmod +x setup-zsh.sh
+    ```
 
-Run the script to install Zsh and configure it:
+3.  **Run the script:**
+    ```bash
+    ./setup-zsh.sh
+    ```
 
-./zsh-setup.sh
+The script will guide you through the process, install necessary components, and prompt you to set Zsh as your default shell.
+
+## Post-Installation
+
+After the script completes, you will be advised to either log out and log back in, or run `exec zsh` for the changes to take effect. The script will also offer to launch Zsh for you immediately.
+
+## Customization
+
+You can customize the plugins and theme directly within the `setup-zsh.sh` script if you wish to add or remove specific components.
+
+## Troubleshooting
+
+-   **Unsupported Distribution**: If your distribution is not explicitly supported, the script will issue a warning. You may need to manually install the base dependencies (`zsh`, `git`, `curl`, `fzf`, `nodejs`, `npm`) before running the script, or modify the `install_packages` function.
+-   **Sudo Permissions**: The script attempts to use `sudo` where necessary. If you encounter permission issues, ensure your user has the appropriate `sudo` privileges.
+-   **Plugin Issues**: If a plugin fails to clone or update, check your internet connection and GitHub access.
+
+Feel free to open an issue or contribute if you have suggestions or encounter problems!
