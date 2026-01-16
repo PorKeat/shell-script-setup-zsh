@@ -43,18 +43,17 @@ This script automates the installation and configuration of Zsh, Oh My Zsh, popu
 
 The script will guide you through the process, install necessary components, and prompt you to set Zsh as your default shell.
 
-## Post-Installation
 
-After the script completes, you will be advised to either log out and log back in, or run `exec zsh` for the changes to take effect. The script will also offer to launch Zsh for you immediately.
 
 ## Customization
 
 You can customize the plugins and theme directly within the `setup-zsh.sh` script if you wish to add or remove specific components.
 
+## Credits
+
+-   AlexKGM
+
 ## Troubleshooting
 
--   **Unsupported Distribution**: If your distribution is not explicitly supported, the script will issue a warning. You may need to manually install the base dependencies (`zsh`, `git`, `curl`, `fzf`, `nodejs`, `npm`) before running the script, or modify the `install_packages` function.
--   **Sudo Permissions**: The script attempts to use `sudo` where necessary. If you encounter permission issues, ensure your user has the appropriate `sudo` privileges.
--   **Plugin Issues**: If a plugin fails to clone or update, check your internet connection and GitHub access.
 
 Feel free to open an issue or contribute if you have suggestions or encounter problems!
