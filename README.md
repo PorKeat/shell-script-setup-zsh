@@ -49,9 +49,7 @@ The script will guide you through the process, install necessary components, and
 
 You can customize the plugins and theme directly within the `setup-zsh.sh` script if you wish to add or remove specific components.
 
-## Credits
 
--   AlexKGM
 
 ## Troubleshooting
 
