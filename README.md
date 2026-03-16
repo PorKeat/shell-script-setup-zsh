@@ -1,57 +1,40 @@
-# Universal Zsh Setup Script
+# setup_zsh.sh
 
-This script automates the installation and configuration of Zsh, Oh My Zsh, popular plugins, and the Agnoster theme across various Linux distributions.
+A one-shot script to set up Zsh + Oh My Zsh + plugins + Agnoster theme on macOS (M1–M4) and Linux.
 
-## Features
+**Author:** Porkeat
 
--   **Distribution Detection**: Automatically identifies your Linux distribution (Ubuntu, Debian, Fedora, Arch, openSUSE, Gentoo, Void, Alpine, etc.) and uses the correct package manager.
--   **Dependency Installation**: Installs essential packages like `zsh`, `git`, `curl`, `fzf`, `nodejs`, and `npm`.
--   **Oh My Zsh Installation**: Installs Oh My Zsh if it's not already present.
--   **Plugin Management**:
-    -   Installs and keeps updated a comprehensive set of Zsh plugins:
-        -   `zsh-autosuggestions`
-        -   `zsh-syntax-highlighting`
-        -   `zsh-history-substring-search`
-        -   `zsh-autopair`
-        -   `alias-finder`
-        -   `zsh-nvm`
-        -   `fzf-tab`
-        -   `zsh-completions`
-    -   Ensures your `.zshrc` is configured to load these plugins.
--   **Agnoster Theme**: Sets the popular Agnoster theme for a visually appealing terminal experience.
--   **Default Shell Configuration**: Prompts to set Zsh as your default shell, handling `sudo` permissions gracefully.
--   **Safe Backup**: Creates a timestamped backup of your existing `.zshrc` file before making any changes.
+---
 
 ## Usage
 
-1.  **Download the script:**
-    ```bash
-    git clone https://github.com/your-username/shell-script-setup-zsh.git
-    cd shell-script-setup-zsh
-    ```
-    (Replace `https://github.com/your-username/shell-script-setup-zsh.git` with the actual repository URL)
+```bash
+# 1. Clone the repo
+git clone https://github.com/PorKeat/shell-script-setup-zsh.git
 
-2.  **Make the script executable:**
-    ```bash
-    chmod +x setup-zsh.sh
-    ```
+# 2. Enter the directory
+cd shell-script-setup-zsh
 
-3.  **Run the script:**
-    ```bash
-    ./setup-zsh.sh
-    ```
+# 3. Make executable
+chmod +x setup_zsh.sh
 
-The script will guide you through the process, install necessary components, and prompt you to set Zsh as your default shell.
+# 4. Run
+./setup_zsh.sh
+```
 
+After it finishes, **fully restart your terminal**.
 
+---
 
-## Customization
+## What gets installed
 
-You can customize the plugins and theme directly within the `setup-zsh.sh` script if you wish to add or remove specific components.
+- **Oh My Zsh** with the **Agnoster** theme
+- Plugins: `zsh-autosuggestions`, `zsh-syntax-highlighting`, `zsh-history-substring-search`, `zsh-autopair`, `zsh-nvm`, `fzf-tab`, `zsh-completions`
+- Homebrew (macOS only, if not already installed)
+- **MesloLGS Nerd Font** — installed and auto-configured for Terminal.app, iTerm2, and VS Code
 
+---
 
+## Re-running
 
-## Troubleshooting
-
-
-Feel free to open an issue or contribute if you have suggestions or encounter problems!
+Safe to run again at any time — updates all plugins and refreshes your config. Your previous `.zshrc` is always backed up first.
